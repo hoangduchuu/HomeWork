@@ -1,0 +1,38 @@
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Libraries
+    rxJavaVersion = '2.2.2'
+    rxAndroidVersion = '2.0.1'
+    koinVersion = '1.0.1'
+
+    appDependencies = [
+            rxJava:           "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid:        "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            koin:             "org.koin:koin-android:$koinVersion"
+
+    ]
+
+    domainDependencies = [
+            rxJava:           "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+    ]
+
+    dataDependencies = [
+            rxJava:           "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+    ]
+
+    cacheDependencies = [
+            rxJava:           "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+    ]
+
+    remoteDependencies = [
+            rxJava:           "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+    ]
+
+
+}

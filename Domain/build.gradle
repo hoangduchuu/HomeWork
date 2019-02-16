@@ -1,7 +1,8 @@
 apply plugin: 'kotlin'
 
 dependencies {
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
+    def dependencies = rootProject.ext.appDependencies
+    implementation dependencies.rxJava
 
 }
 

@@ -1,9 +1,11 @@
 apply plugin: 'kotlin'
 
 dependencies {
+    def dependencies = rootProject.ext.appDependencies
+
     implementation project(':DataSource')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
+    implementation dependencies.rxJava
 }
 
 sourceCompatibility = "7"

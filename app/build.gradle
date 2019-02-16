@@ -23,6 +23,9 @@ android {
 }
 
 dependencies {
+    def dependencies = rootProject.ext.appDependencies
+
+
     implementation project(':cache')
     implementation project(':DataSource')
     implementation project(':Remote')
@@ -35,6 +38,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+
+    implementation dependencies.rxJava
+    implementation dependencies.rxAndroid
+    implementation dependencies.koin
 }
