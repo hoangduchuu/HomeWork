@@ -24,7 +24,7 @@ android {
 
 dependencies {
     implementation project(':cache')
-    implementation project(':Data')
+    implementation project(':DataSource')
     implementation project(':Remote')
     implementation project(':Domain')
 
