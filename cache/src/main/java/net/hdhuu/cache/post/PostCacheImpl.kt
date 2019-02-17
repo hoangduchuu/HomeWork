@@ -14,8 +14,8 @@ class PostCacheImpl(val mapper: PostEntityMapper,val tweetDatabase: TweetDatabas
     var lists: ArrayList<CachedPost> = ArrayList()
     val data: ArrayList<PostDataEntity> = ArrayList()
     override fun getAllPosts(): Observable<List<PostDataEntity>> {
-        lists.add(CachedPost(2L, "a cache", 3.0))
-        lists.add(CachedPost(4L, "b cache", 3.0))
+        lists.add(CachedPost(2, "a cache", 3.0))
+        lists.add(CachedPost(4, "b cache", 3.0))
         for (list in lists) {
             data.add(mapper.mapFromCached(list))
         }

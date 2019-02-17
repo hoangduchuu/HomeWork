@@ -12,8 +12,8 @@ class PostRemoteImpl(val mapper: PostEntityMapper) : PostRemote {
     val data: ArrayList<PostDataEntity> = ArrayList()
 
     override fun getAllPosts(): Observable<List<PostDataEntity>> {
-        lists.add(PostRemoteEntity(2L, "a remote", 3.0))
-        lists.add(PostRemoteEntity(4L, "b remote", 3.0))
+        lists.add(PostRemoteEntity(2, "a remote", 3.0))
+        lists.add(PostRemoteEntity(4, "b remote", 3.0))
 
         for (list in lists) {
             data.add(mapper.mapFromRemote(list))
