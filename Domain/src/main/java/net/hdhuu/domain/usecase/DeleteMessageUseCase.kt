@@ -10,7 +10,7 @@ import net.hdhuu.domain.scheduler.ThreadExecutor
  * Created by Huu Hoang on 2/17/19.
  */
 
-open class PostMessageUseCase(
+open class DeleteMessageUseCase(
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread,
     val postRepository: PostRepository

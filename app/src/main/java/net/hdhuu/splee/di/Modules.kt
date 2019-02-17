@@ -50,7 +50,7 @@ val postModule = module(override = true) {
     factory<PostRemote> { PostRemoteImpl(get ()) }
     factory<PostCache> { PostCacheImpl(get(),get()) }
     factory { PostDataStoreFactory(get(), get(), get()) }
-    factory<PostRepository> { net.hdhuu.datasource.post.PostRepository(get(),get()) }
+    factory<PostRepository> { net.hdhuu.datasource.post.PostRepository(get(),get(),get()) }
     factory { GetPostUseCase(get(), get(), get()) }
     factory { PostMessageUseCase(get(),get(),get()) }
 }

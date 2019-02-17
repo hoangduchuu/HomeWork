@@ -10,16 +10,19 @@ import net.hdhuu.domain.scheduler.ThreadExecutor
  * Created by Huu Hoang on 2/17/19.
  */
 
-open class PostMessageUseCase(
+open class UpdateMessageUseCase(
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread,
     val postRepository: PostRepository
-) : BaseUseCase<String, Boolean>(threadExecutor, postExecutionThread) {
+) : BaseUseCase<UpdateMessageUseCase.Params, Boolean>(threadExecutor, postExecutionThread) {
 
     /**
-     * @param : is post message;
+     * @param : Parameters
      */
-    override fun buildUseCaseObservable(params: String): Observable<Boolean> {
-        return postRepository.postMessage(params)
+    override fun buildUseCaseObservable(params: Params): Observable<Boolean> {
+        return postRepository.updateMessage(params.postID,params.message)
     }
+
+    data class Params(var postID:Int, var message:String)
+
 }
