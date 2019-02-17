@@ -10,11 +10,16 @@ ext {
     rxJavaVersion = '2.2.2'
     rxAndroidVersion = '2.0.1'
     koinVersion = '1.0.1'
+    room_version = '2.1.0-alpha04'
 
     appDependencies = [
             rxJava:           "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
             rxAndroid:        "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            koin:             "org.koin:koin-android:$koinVersion"
+            koin:             "org.koin:koin-android:$koinVersion",
+            RoomRuntime:       "androidx.room:room-runtime:$room_version",
+            RoomCompiler:       "androidx.room:room-compiler:$room_version",
+            Roomcoroutines:       "androidx.room:room-coroutines:$room_version",
+
 
     ]
 

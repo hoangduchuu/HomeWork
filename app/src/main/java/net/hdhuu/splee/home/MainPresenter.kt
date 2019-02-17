@@ -4,8 +4,9 @@ import android.util.Log
 import io.reactivex.observers.DisposableObserver
 import net.hdhuu.domain.model.Post
 import net.hdhuu.domain.usecase.GetPostUseCase
+import net.hdhuu.domain.usecase.PostMessageUseCase
 
-class MainPresenter constructor( val getPostUseCase: GetPostUseCase, val view: MainContract.View) : MainContract.Presenter{
+class MainPresenter constructor(val postMessageUseCase: PostMessageUseCase, val getPostUseCase: GetPostUseCase, val view: MainContract.View) : MainContract.Presenter{
 
     override fun testPresenter() {
         getPostUseCase.run("",object : DisposableObserver<List<Post>>(){

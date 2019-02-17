@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -43,4 +44,6 @@ dependencies {
     implementation dependencies.rxJava
     implementation dependencies.rxAndroid
     implementation dependencies.koin
+    implementation dependencies.RoomRuntime
+    kapt dependencies.RoomCompiler // For Kotlin use kapt instead of annotationProcessor
 }

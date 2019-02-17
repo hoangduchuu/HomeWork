@@ -5,4 +5,5 @@ import net.hdhuu.domain.model.Post
 
 interface PostRepository {
     fun getAllPosts() : Observable<List<Post>>
+    fun postMessage(message:String):Observable<Any>
 }

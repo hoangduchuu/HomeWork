@@ -4,3 +4,7 @@
 \.gradle/
 
 *.iml
+
+gradle/
+
+\.DS_Store
