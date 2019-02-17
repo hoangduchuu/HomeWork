@@ -14,12 +14,12 @@ open class PostMessageUseCase(
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread,
     val postRepository: PostRepository
-) : BaseUseCase<String, Any>(threadExecutor, postExecutionThread) {
+) : BaseUseCase<String, Boolean>(threadExecutor, postExecutionThread) {
 
     /**
      * @param : is post message;
      */
-    override fun buildUseCaseObservable(params: String): Observable<Any> {
+    override fun buildUseCaseObservable(params: String): Observable<Boolean> {
         return postRepository.postMessage(params)
     }
 }

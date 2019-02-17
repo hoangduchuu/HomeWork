@@ -11,7 +11,13 @@ class PostRepository(val factory: PostDataStoreFactory, val postCache: PostCache
         return factory.getAllPost();
     }
 
-    override fun postMessage(message: String): Observable<Any> {
-      return  postCache.insertPost(PostDataEntity(content = message, createAt = System.currentTimeMillis().toDouble())).toObservable()
+    //FIXME for online version, use remote module to post and cache
+    override fun postMessage(message: String): Observable<Boolean> {
+        return Observable.create { emitter ->
+            postCache.insertPost(PostDataEntity(content = message, createAt = System.currentTimeMillis().toDouble()))
+            emitter.onNext(true)
+        }
+
     }
+    
 }
