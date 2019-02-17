@@ -12,6 +12,7 @@ import net.hdhuu.domain.repository.PostRepository
 import net.hdhuu.domain.scheduler.PostExecutionThread
 import net.hdhuu.domain.scheduler.ThreadExecutor
 import net.hdhuu.domain.usecase.GetPostUseCase
+import net.hdhuu.domain.usecase.PostMessageUseCase
 import net.hdhuu.remote.post.PostRemoteImpl
 import net.hdhuu.splee.home.MainContract
 import net.hdhuu.splee.home.MainPresenter
@@ -35,7 +36,7 @@ val applicationModule = module(override = true) {
 
 val activitiesModule = module(override = true) {
     factory<MainContract.Presenter> { (cv: MainContract.View) ->
-        MainPresenter( get(), cv)
+        MainPresenter( get(),get(), cv)
     }
 
 }
@@ -49,6 +50,7 @@ val postModule = module(override = true) {
     factory<PostRemote> { PostRemoteImpl(get ()) }
     factory<PostCache> { PostCacheImpl(get(),get()) }
     factory { PostDataStoreFactory(get(), get(), get()) }
-    factory<PostRepository> { net.hdhuu.datasource.post.PostRepository(get()) }
+    factory<PostRepository> { net.hdhuu.datasource.post.PostRepository(get(),get()) }
     factory { GetPostUseCase(get(), get(), get()) }
+    factory { PostMessageUseCase(get(),get(),get()) }
 }
