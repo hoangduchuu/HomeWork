@@ -1,7 +1,9 @@
 package net.hdhuu.splee.di
 
+import androidx.room.Room
 import net.hdhuu.cache.post.PostCacheImpl
 import net.hdhuu.cache.post.mapper.PostEntityMapper
+import net.hdhuu.cache.room.TweetDatabase
 import net.hdhuu.datasource.mapper.PostMapper
 import net.hdhuu.datasource.post.repository.PostCache
 import net.hdhuu.datasource.post.repository.PostRemote
@@ -15,6 +17,7 @@ import net.hdhuu.splee.home.MainContract
 import net.hdhuu.splee.home.MainPresenter
 import net.hdhuu.splee.scheduler.JobExecutor
 import net.hdhuu.splee.scheduler.UIThread
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module.module
 
 
@@ -22,6 +25,12 @@ val applicationModule = module(override = true) {
     single<ThreadExecutor> { JobExecutor() }
     single<PostExecutionThread> { UIThread() }
 
+    single { Room.databaseBuilder(androidContext(),
+        TweetDatabase::class.java, "bufferoos.db")
+        .allowMainThreadQueries()
+        .fallbackToDestructiveMigration()
+        .build() }
+    factory { get<TweetDatabase>().postDAO() }
 }
 
 val activitiesModule = module(override = true) {
@@ -38,7 +47,7 @@ val postModule = module(override = true) {
     factory { net.hdhuu.remote.mapper.PostEntityMapper() }
 
     factory<PostRemote> { PostRemoteImpl(get ()) }
-    factory<PostCache> { PostCacheImpl(get()) }
+    factory<PostCache> { PostCacheImpl(get(),get()) }
     factory { PostDataStoreFactory(get(), get(), get()) }
     factory<PostRepository> { net.hdhuu.datasource.post.PostRepository(get()) }
     factory { GetPostUseCase(get(), get(), get()) }
