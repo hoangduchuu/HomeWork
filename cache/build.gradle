@@ -36,5 +36,8 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
     implementation dependencies.rxJava
+    implementation dependencies.RoomRuntime
+    kapt dependencies.RoomCompiler // FoFor Kotlin use kapt instead of annotationProcessor
+    implementation dependencies.Roomcoroutines
 
 }
