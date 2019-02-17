@@ -46,4 +46,6 @@ dependencies {
     implementation dependencies.koin
     implementation dependencies.RoomRuntime
     kapt dependencies.RoomCompiler // For Kotlin use kapt instead of annotationProcessor
+    implementation dependencies.supportRecyclerView // For Kotlin use kapt instead of annotationProcessor
+    implementation dependencies.supportDesign // For Kotlin use kapt instead of annotationProcessor
 }
