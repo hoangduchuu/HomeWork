@@ -39,7 +39,7 @@ class PostRepository(val factory: PostDataStoreFactory, val postCache: PostCache
     override fun postMultipalMessages(messages: List<String>): Observable<Boolean> {
             val dataMapped: MutableList<PostDataEntity> = ArrayList()
             for (i in 0..messages.size - 1) {
-                dataMapped.add(mapper.mapFromEntity(Post(content = messages[i])))
+                dataMapped.add(mapper.mapFromEntity(Post(createAt = System.currentTimeMillis().toDouble(),content = messages[i])))
             }
           return  postCache.insertMultilePost(dataMapped).toObservable()
 

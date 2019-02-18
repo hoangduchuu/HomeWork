@@ -10,5 +10,6 @@ data class Post(
 ) {
     constructor(content: String, createAt: Double) : this() {
         this.content = content
+        this.createAt = createAt
     }
 }
