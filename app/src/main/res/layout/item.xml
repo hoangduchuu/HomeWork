@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:background="#ad9ee8"
-              android:layout_height="wrap_content">
-    <TextView android:layout_width="wrap_content"
-              tools:text="abc hello"
-              android:id="@+id/txtContent"
-              android:layout_height="wrap_content"/>
-    <TextView android:layout_width="wrap_content"
-              tools:text="121"
-              android:id="@+id/txtId"
-              android:layout_height="wrap_content"/>
-    <TextView android:layout_width="wrap_content"
-              tools:text="121"
-              android:id="@+id/txtCreatedAt"
-              android:layout_height="wrap_content"/>
-    <View android:layout_width="match_parent" android:layout_height="2dp"
-    android:background="#F44336"/>
+<com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:clone="http://schemas.android.com/tools"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="?attr/colorPrimaryDark"
+        app:cardCornerRadius="4dp" xmlns:android="http://schemas.android.com/apk/res/android">
 
-</LinearLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+
+
+        <TextView
+                android:gravity="right"
+                android:id="@+id/txtCreatedAt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                clone:text="b12 days ago"
+                android:textAppearance="?attr/textAppearanceBody2"/>
+        <TextView
+                android:id="@+id/txtId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                clone:text="by Huu Hoang"
+                android:textAppearance="?attr/textAppearanceBody2" />
+        <TextView
+                android:layout_below="@id/txtCreatedAt"
+                android:id="@+id/txtContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="title"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

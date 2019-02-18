@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item.view.*
 import net.hdhuu.domain.model.Post
 import net.hdhuu.splee.R
+import net.hdhuu.splee.utils.TImeHelper
 
-class MainPostAdapter : RecyclerView.Adapter<MainPostAdapter.ViewHolder>() {
+class MainPostAdapter constructor(val tImeHelper: TImeHelper) : RecyclerView.Adapter<MainPostAdapter.ViewHolder>() {
     var postClickListener: PostClickListener? = null
 
     var posts: List<Post> = arrayListOf()
@@ -17,8 +18,8 @@ class MainPostAdapter : RecyclerView.Adapter<MainPostAdapter.ViewHolder>() {
         val post = posts[position]
 
         holder.tvContent?.text = post.content
-        holder.tvCreateAt?.text = post.createAt.toString()
-        holder.tvID?.text = post.id.toString()
+        holder.tvCreateAt?.text = tImeHelper.createdAt(post.createAt.toLong())
+        holder.tvID?.text = "#${post.id}"
 
         holder.itemView.setOnClickListener {
             postClickListener?.onItemClicked(post.id.toString())

@@ -19,6 +19,7 @@ import net.hdhuu.splee.home.*
 import net.hdhuu.splee.home.model.MainViewModel
 import net.hdhuu.splee.scheduler.JobExecutor
 import net.hdhuu.splee.scheduler.UIThread
+import net.hdhuu.splee.utils.TImeHelper
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module.module
 import org.koin.androidx.viewmodel.ext.koin.viewModel
@@ -55,7 +56,8 @@ val postModule = module(override = true) {
     factory { DeleteMessageUseCase(get(),get(),get()) }
 
     viewModel{ MainViewModel(get(),get()) }
-    factory { MainPostAdapter() }
+    factory { TImeHelper() }
+    factory { MainPostAdapter(get()) }
 
 
 }
