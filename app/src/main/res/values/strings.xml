@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Splee</string>
+    <string name="enter_message">Enter message</string>
+    <string name="submit">Submit</string>
+    <string name="some_things_error">SOME THINGS ERROR?</string>
+    <string name="empty_data_post_to_see">Empty data, post to see!?</string>
 </resources>

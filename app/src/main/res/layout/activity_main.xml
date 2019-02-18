@@ -2,24 +2,19 @@
 <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent" android:layout_height="match_parent"
         tools:context=".home.MainActivity">
-<TextView android:layout_width="wrap_content"
-          android:text="abc abc"
-          android:visibility="gone"
-          android:textSize="27dp"
-          android:id="@+id/tvHuuhuu" android:layout_height="wrap_content"/>
+
     <androidx.recyclerview.widget.RecyclerView
-            android:layout_below="@+id/tvHuuhuu"
             android:layout_width="match_parent"
             android:id="@+id/rv"
             android:layout_height="match_parent"
             tools:listitem="@layout/item"/>
-<ProgressBar android:layout_width="wrap_content"
-             android:id="@+id/loadingView"
-             android:layout_gravity="center"
-             android:layout_height="wrap_content"/>
+    <ProgressBar android:layout_width="wrap_content"
+                 android:id="@+id/loadingView"
+                 android:layout_gravity="center"
+                 android:layout_height="wrap_content"/>
     <net.hdhuu.splee.customview.error.ErrorView android:layout_width="wrap_content"
                                                 android:layout_gravity="center"
                                                 android:id="@+id/errorView"
