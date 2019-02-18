@@ -4,4 +4,6 @@
     <string name="submit">Submit</string>
     <string name="some_things_error">SOME THINGS ERROR?</string>
     <string name="empty_data_post_to_see">Empty data, post to see!?</string>
+    <string name="empty_message_note">Why you post nothing?</string>
+    <string name="too_long_message">Contain a word too long!</string>
 </resources>
