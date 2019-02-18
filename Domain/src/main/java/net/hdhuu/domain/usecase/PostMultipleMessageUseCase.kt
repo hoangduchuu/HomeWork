@@ -10,16 +10,16 @@ import net.hdhuu.domain.scheduler.ThreadExecutor
  * Created by Huu Hoang on 2/17/19.
  */
 
-open class DeleteMessageUseCase(
+open class PostMultipleMessageUseCase(
     threadExecutor: ThreadExecutor,
     postExecutionThread: PostExecutionThread,
     val postRepository: PostRepository
-) : BaseUseCase<String, Boolean>(threadExecutor, postExecutionThread) {
+) : BaseUseCase< List<String>, Boolean>(threadExecutor, postExecutionThread) {
 
     /**
      * @param : is post message;
      */
-    override fun buildUseCaseObservable(params: String): Observable<Boolean> {
-        return postRepository.deleteMessage(Integer.valueOf(params))
+    override fun buildUseCaseObservable(params: List<String>): Observable<Boolean> {
+        return postRepository.postMultipalMessages(params)
     }
 }

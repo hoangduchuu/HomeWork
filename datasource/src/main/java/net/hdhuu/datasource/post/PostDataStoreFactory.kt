@@ -14,7 +14,7 @@ import net.hdhuu.domain.model.Post
 class PostDataStoreFactory(val cache: PostCache, val remote: PostRemote, val postMapper: PostMapper) {
     fun getAllPost(): Observable<List<Post>> {
         return  cache.getAllPosts()
-            .concatWith(remote.getAllPosts())
+            .concatWith(cache.getAllPosts())
             .map { t: List<PostDataEntity> ->
                 postMapper.mapToEntity(t)
             }
