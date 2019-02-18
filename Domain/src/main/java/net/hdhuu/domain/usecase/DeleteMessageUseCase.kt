@@ -20,6 +20,6 @@ open class DeleteMessageUseCase(
      * @param : is post message;
      */
     override fun buildUseCaseObservable(params: String): Observable<Boolean> {
-        return postRepository.postMessage(params)
+        return postRepository.deleteMessage(Integer.valueOf(params))
     }
 }

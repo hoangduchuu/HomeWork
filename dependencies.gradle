@@ -22,6 +22,7 @@ ext {
             Roomcoroutines:       "androidx.room:room-coroutines:$room_version",
             supportRecyclerView:"com.android.support:recyclerview-v7:${supportLibraryVersion}",
             supportDesign:      "com.android.support:design:${supportLibraryVersion}",
+            supportDesign:      "org.koin:koin-androidx-viewmodel:${koinVersion}",
 
 
     ]

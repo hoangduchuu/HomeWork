@@ -11,15 +11,17 @@ import net.hdhuu.datasource.post.PostDataStoreFactory
 import net.hdhuu.domain.repository.PostRepository
 import net.hdhuu.domain.scheduler.PostExecutionThread
 import net.hdhuu.domain.scheduler.ThreadExecutor
+import net.hdhuu.domain.usecase.DeleteMessageUseCase
 import net.hdhuu.domain.usecase.GetPostUseCase
 import net.hdhuu.domain.usecase.PostMessageUseCase
 import net.hdhuu.remote.post.PostRemoteImpl
-import net.hdhuu.splee.home.MainContract
-import net.hdhuu.splee.home.MainPresenter
+import net.hdhuu.splee.home.*
+import net.hdhuu.splee.home.model.MainViewModel
 import net.hdhuu.splee.scheduler.JobExecutor
 import net.hdhuu.splee.scheduler.UIThread
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module.module
+import org.koin.androidx.viewmodel.ext.koin.viewModel
 
 
 val applicationModule = module(override = true) {
@@ -27,7 +29,7 @@ val applicationModule = module(override = true) {
     single<PostExecutionThread> { UIThread() }
 
     single { Room.databaseBuilder(androidContext(),
-        TweetDatabase::class.java, "bufferoos.db")
+        TweetDatabase::class.java, "posts.db")
         .allowMainThreadQueries()
         .fallbackToDestructiveMigration()
         .build() }
@@ -35,9 +37,6 @@ val applicationModule = module(override = true) {
 }
 
 val activitiesModule = module(override = true) {
-    factory<MainContract.Presenter> { (cv: MainContract.View) ->
-        MainPresenter( get(),get(), cv)
-    }
 
 }
 
@@ -53,4 +52,10 @@ val postModule = module(override = true) {
     factory<PostRepository> { net.hdhuu.datasource.post.PostRepository(get(),get(),get()) }
     factory { GetPostUseCase(get(), get(), get()) }
     factory { PostMessageUseCase(get(),get(),get()) }
+    factory { DeleteMessageUseCase(get(),get(),get()) }
+
+    viewModel{ MainViewModel(get(),get()) }
+    factory { MainPostAdapter() }
+
+
 }

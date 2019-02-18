@@ -1,28 +1,125 @@
 package net.hdhuu.splee.home
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
-import android.widget.Toast
+import android.view.View
 import net.hdhuu.splee.R
 import org.koin.android.ext.android.inject
-import org.koin.core.parameter.parametersOf
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_main.*
+import net.hdhuu.domain.model.Post
+import net.hdhuu.splee.home.model.MainViewModel
+import net.hdhuu.splee.home.model.PostState
 
-class MainActivity : AppCompatActivity(), MainContract.View {
 
-    val presenter: MainContract.Presenter by inject{ parametersOf(this)}
+class MainActivity : AppCompatActivity(){
+
+    val mainViewModel: MainViewModel by viewModel()
+
+    val mainPostAdapter: MainPostAdapter by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        presenter.testPresenter()
-
+        setUpRV()
 
     }
 
-    @SuppressLint("LongLogTag")
-    override fun testView() {
-        Toast.makeText(applicationContext,"b",Toast.LENGTH_LONG).show()
+    override fun onStart() {
+        super.onStart()
+        registerLiveDataListenner()
+
     }
+
+    private fun setUpRV() {
+        mainPostAdapter.postClickListener = projectListener
+        rv.layoutManager = LinearLayoutManager(this)
+        rv.adapter = mainPostAdapter
+    }
+
+
+    private fun registerLiveDataListenner() {
+        mainViewModel.getPost().observe(this,
+            Observer<PostState> {
+                if (it != null) this.handleDataState(it) })
+        Handler().postDelayed({
+            mainViewModel.getPosts()
+        },2000)// clone loading
+    }
+
+
+    private fun updateListView(posts: List<Post>) {
+        mainPostAdapter.posts = posts
+        mainPostAdapter.notifyDataSetChanged()
+    }
+
+    private val projectListener = object : PostClickListener {
+        override fun onItemClicked(id: String) {
+            Log.d("CLICKED: " , id)
+
+        }
+
+    }
+    
+    //region setupView
+    private fun handleDataState(postState: PostState) {
+        when (postState) {
+            is PostState.Loading -> {
+                showLoading()
+            }
+            is PostState.Success -> {
+                showViewOnsuccess(postState.data)
+            }
+            is PostState.Error ->  {
+                showErrorView(postState.errorMessage)
+            }
+        }
+    }
+
+    private fun showErrorView(errorMessage: String?) {
+        //FIXME, show error message to errorView
+        errorView.visibility = View.VISIBLE
+        rv.visibility = View.GONE
+        emptyDataView.visibility = View.GONE
+        loadingView.visibility = View.GONE
+    }
+
+    private fun showLoading() {
+        loadingView.visibility = View.VISIBLE
+        errorView.visibility = View.GONE
+        rv.visibility = View.GONE
+        emptyDataView.visibility = View.GONE
+
+    }
+
+    private fun showViewOnsuccess(data: List<Post>?) {
+        Log.d("DATA: ", data.toString())
+        if (data!= null && data.isNotEmpty()) {
+            showListView()
+            updateListView(data)
+        }else{
+            showEmptyData()
+        }
+    }
+    private fun showEmptyData() {
+        emptyDataView.visibility = View.VISIBLE
+        rv.visibility = View.GONE
+        loadingView.visibility = View.GONE
+        errorView.visibility = View.GONE
+    }
+
+    private fun showListView() {
+        rv.visibility = View.VISIBLE
+        loadingView.visibility = View.GONE
+        errorView.visibility = View.GONE
+        emptyDataView.visibility = View.GONE
+    }
+
+    //endregion
+
+
 }
