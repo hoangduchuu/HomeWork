@@ -1,5 +1,6 @@
 package net.hdhuu.splee.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import net.hdhuu.domain.model.Post
 import net.hdhuu.splee.home.model.MainViewModel
 import net.hdhuu.splee.home.model.PostState
+import net.hdhuu.splee.postscreen.PostActivity
 
 
 class MainActivity : AppCompatActivity(){
@@ -48,7 +50,7 @@ class MainActivity : AppCompatActivity(){
                 if (it != null) this.handleDataState(it) })
         Handler().postDelayed({
             mainViewModel.getPosts()
-        },2000)// clone loading
+        },0)// clone loading
     }
 
 
@@ -65,6 +67,9 @@ class MainActivity : AppCompatActivity(){
 
     }
     
+    fun startPostScreen(view:View){
+        startActivity( Intent(this, PostActivity::class.java))
+    }
     //region setupView
     private fun handleDataState(postState: PostState) {
         when (postState) {

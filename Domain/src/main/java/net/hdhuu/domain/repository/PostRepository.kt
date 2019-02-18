@@ -8,4 +8,5 @@ interface PostRepository {
     fun postMessage(message:String):Observable<Boolean>
     fun deleteMessage(postID: Int): Observable<Boolean>
     fun updateMessage(postID: Int, message:String):Observable<Boolean>
+    fun postMultipalMessages(messages: List<String>): Observable<Boolean>
 }

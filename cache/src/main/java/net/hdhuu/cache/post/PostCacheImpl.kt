@@ -26,6 +26,15 @@ class PostCacheImpl(val mapper: PostEntityMapper, val tweetDatabase: TweetDataba
         }
     }
 
+    override fun insertMultilePost(post: List<PostDataEntity>): Completable {
+        return Completable.defer {
+            post.forEach {
+                tweetDatabase.postDAO().insertPost(mapper.mapToCached(it))
+            }
+            Completable.complete()
+        }
+    }
+
     override fun deletePost(postID: String): Completable {
         return Completable.defer {
             tweetDatabase.postDAO().deletePostByID(postID)

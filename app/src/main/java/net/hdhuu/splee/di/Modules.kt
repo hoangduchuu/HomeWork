@@ -14,9 +14,12 @@ import net.hdhuu.domain.scheduler.ThreadExecutor
 import net.hdhuu.domain.usecase.DeleteMessageUseCase
 import net.hdhuu.domain.usecase.GetPostUseCase
 import net.hdhuu.domain.usecase.PostMessageUseCase
+import net.hdhuu.domain.usecase.PostMultipleMessageUseCase
 import net.hdhuu.remote.post.PostRemoteImpl
+import net.hdhuu.splee.SplitMessage
 import net.hdhuu.splee.home.*
 import net.hdhuu.splee.home.model.MainViewModel
+import net.hdhuu.splee.postscreen.PostScreenViewModel
 import net.hdhuu.splee.scheduler.JobExecutor
 import net.hdhuu.splee.scheduler.UIThread
 import net.hdhuu.splee.utils.TImeHelper
@@ -58,6 +61,10 @@ val postModule = module(override = true) {
     viewModel{ MainViewModel(get(),get()) }
     factory { TImeHelper() }
     factory { MainPostAdapter(get()) }
+    factory { PostMultipleMessageUseCase(get(),get(),get()) }
 
+    viewModel { PostScreenViewModel(get(),get()) }
+
+    factory { SplitMessage() }
 
 }
