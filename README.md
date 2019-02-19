@@ -30,10 +30,11 @@ and it would return
 
 [x] ​The submission should be a git repository​. In the project directory, `git log` should 
 show your commits.
+
 [x] 5. Bonus points for any additional polish and sophistication you add to the experience.
 * [x] Activity and fragment life cycle, handling configuration changes
 
-`update`
+`updateing...`
 
 
 
