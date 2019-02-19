@@ -47,8 +47,8 @@ show your commits.
 *  Using Clean Architecture Way: Follow [Fernando Cejas Blogs](https://github.com/android10): 
 
 ## Note:
-* this version just use only Local database 
-
+* This version just use only local database
+* [APK FILE](https://github.com/hoangduchuu/HomeWork/tree/develop/files)
 ## Issue and still not complete:
 * Unitest all layers
 * Still not observe ROOM database changes from DataSource-layer (remove, add) in UI-layer
