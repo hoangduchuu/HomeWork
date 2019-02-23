@@ -12,4 +12,5 @@
     <string name="Register">Register</string>
     <string name="or">or</string>
     <string name="todo">TODO</string>
+    <string name="reset">Reset</string>
 </resources>
