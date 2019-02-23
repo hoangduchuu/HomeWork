@@ -31,6 +31,7 @@ dependencies {
     implementation project(':DataSource')
     implementation project(':Remote')
     implementation project(':Domain')
+    implementation project(':firebaseonline')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -49,4 +50,11 @@ dependencies {
     kapt dependencies.RoomCompiler // For Kotlin use kapt instead of annotationProcessor
     implementation dependencies.supportRecyclerView // For Kotlin use kapt instead of annotationProcessor
     implementation dependencies.supportDesign // For Kotlin use kapt instead of annotationProcessor
+
+    // firebase
+    implementation "com.google.firebase:firebase-auth:16.1.0"
+    implementation "com.google.firebase:firebase-database:16.0.6"
+    implementation "com.google.firebase:firebase-storage:16.0.5"
+
 }
+apply plugin: 'com.google.gms.google-services'

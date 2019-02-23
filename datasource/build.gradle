@@ -4,8 +4,10 @@ dependencies {
     def dependencies = rootProject.ext.appDependencies
 
     implementation project(':Domain')
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation dependencies.rxJava
+
 
 
 
