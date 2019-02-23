@@ -6,4 +6,10 @@
     <string name="empty_data_post_to_see">Empty data, post to see!?</string>
     <string name="empty_message_note">Why you post nothing?</string>
     <string name="too_long_message">Contain a word too long!</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_username">Enter User name</string>
+    <string name="login">Login</string>
+    <string name="Register">Register</string>
+    <string name="or">or</string>
+    <string name="todo">TODO</string>
 </resources>

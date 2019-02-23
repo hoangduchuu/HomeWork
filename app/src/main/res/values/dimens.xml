@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="input_form_space">50dp</dimen>
+    <dimen name="space_text_with_parent">5dp</dimen>
+</resources>
