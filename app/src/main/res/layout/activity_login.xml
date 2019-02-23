@@ -66,7 +66,7 @@
             android:background="@drawable/btn_login_rounded"
             android:layout_width="215dp"
             android:layout_height="39dp"
-            android:id="@+id/button"
+            android:id="@+id/btnLogin"
             app:layout_constraintTop_toBottomOf="@+id/editText" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="20dp"
             app:layout_constraintHorizontal_bias="0.498" android:layout_marginLeft="32dp"

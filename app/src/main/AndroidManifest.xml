@@ -10,6 +10,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".homepage.HomePageActivity">
+        </activity>
         <activity android:name=".accounting.register.RegisterActivity">
         </activity>
         <activity android:name=".accounting.forgot.ForgotPasswordActivity">

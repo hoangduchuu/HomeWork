@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import net.hdhuu.splee.R
 import net.hdhuu.splee.accounting.forgot.ForgotPasswordActivity
 import net.hdhuu.splee.accounting.register.RegisterActivity
+import net.hdhuu.splee.homepage.HomePageActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -19,6 +20,10 @@ class LoginActivity : AppCompatActivity() {
         }
         btnForgotPassword.setOnClickListener {
             startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        }
+
+        btnLogin.setOnClickListener {
+            startActivity(Intent(this, HomePageActivity::class.java))
         }
 
     }

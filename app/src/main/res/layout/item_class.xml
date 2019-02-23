@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:clone="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="?attr/colorPrimaryDark" app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:padding="8dp">
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="@dimen/size_avatar"
+                android:paddingRight="5dp"
+                android:src="@drawable/demo_teacher"
+                android:layout_height="@dimen/size_avatar"/>
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                clone:text="HUUHOANG"
+                android:text="Jone Doe"
+                android:id="@+id/tvTeacherName"
+                android:layout_toRightOf="@+id/ivAvatar"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/ivAvatar"/>
+        <androidx.appcompat.widget.AppCompatRatingBar
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/rbStart"
+                android:layout_below="@id/tvTeacherName"
+                android:layout_toRightOf="@+id/ivAvatar"
+                android:layout_width="wrap_content"
+                android:numStars="5"
+                android:rating="4.5"
+                android:stepSize="0.1"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/ivAvatar"/>
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_below="@id/rbStart"
+                android:layout_width="wrap_content"
+                clone:text="Giáo viên tại trung tâm VUS"
+                android:text="Giáo viên tại trung tâm VUS"
+                android:layout_toRightOf="@+id/ivAvatar"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/ivAvatar"/>
+        <androidx.appcompat.widget.AppCompatTextView
+                clone:text="20 Rviews"
+                android:text="20 Rviews"
+                android:textColor="@color/main"
+                android:layout_marginLeft="10sp"
+                android:layout_below="@id/tvTeacherName"
+                android:layout_toRightOf="@+id/rbStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/rbStart"
+                android:layout_marginStart="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:src="@drawable/demo_flag_vn"
+                android:id="@+id/ivFlag"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"/>
+        <androidx.appcompat.widget.AppCompatImageView
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/ivFlag"
+                android:layout_width="wrap_content"
+                android:src="@drawable/demo_genter_age_male"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/ivFlag"
+                android:layout_marginEnd="5dp"/>
+        <View android:layout_width="match_parent"
+              android:layout_marginTop="10dp"
+              android:id="@+id/line"
+              android:background="#EFEFEF"
+              android:layout_below="@id/ivAvatar"
+              android:layout_height="1sp"/>
+        <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginLeft="10dp"
+                   android:id="@+id/_add"
+                   android:layout_below="@+id/line"
+                   android:src="@drawable/ic_location"
+                   android:layout_height="wrap_content" android:layout_marginStart="10dp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_below="@+id/line"
+                  android:layout_toRightOf="@id/_add"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginLeft="10dp"
+                  clone:text="Coffee house, 12 Nguyen Dinh Chieu, HCM City"
+                  android:text="Coffee house, 12 Nguyen Dinh Chieu, HCM City"
+                  android:layout_height="wrap_content"/>
+
+        <LinearLayout
+                android:showDividers="middle"
+                android:divider="?android:attr/dividerHorizontal"
+                android:layout_marginTop="22sp"
+                android:layout_below="@id/_add"
+                android:weightSum="4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        clone:text="12h30"
+                        android:text="12h30"
+                        android:textSize="16dp"
+                        android:layout_gravity="center"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_gravity="center"
+                        android:drawableBottom="@drawable/ic_clock"
+                        android:layout_width="wrap_content"
+                        clone:text="Time"
+                        android:text="Time"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        clone:text="12/12/18"
+                        android:text="12/12/18"
+                        android:maxLines="1"
+                        android:textSize="16dp"
+                        android:layout_gravity="center"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        clone:text="Date"
+                        android:text="Date"
+                        android:drawableBottom="@drawable/ic_calendar"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        clone:text="12h30"
+                        android:text="4"
+                        android:textSize="16dp"
+                        android:layout_gravity="center"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        clone:text="Students"
+                        android:text="Students"
+                        android:drawableBottom="@drawable/ic_student"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        clone:text="150.000"
+                        android:text="150.000"
+                        android:textSize="16dp"
+                        android:layout_gravity="center"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:drawableBottom="@drawable/ic_money_bag"
+                        clone:text="Fee(VND)"
+                        android:text="Fee(VND)"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
