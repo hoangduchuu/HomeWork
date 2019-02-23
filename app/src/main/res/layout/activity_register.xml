@@ -22,17 +22,6 @@
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/appCompatImageView"/>
 
-    <androidx.appcompat.widget.AppCompatImageView
-            android:src="@drawable/student_group_plaining"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" android:id="@+id/appCompatImageView2"/>
     <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="wrap_content"
             android:padding="@dimen/space_text_with_parent"
@@ -41,11 +30,42 @@
             android:background="@drawable/edt_login_rounded"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_user_login"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2"
-            android:layout_marginTop="20dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:id="@+id/editText2"
-            app:layout_constraintHorizontal_bias="0.503" android:hint="@string/enter_username"
-            android:importantForAutofill="no" android:inputType="" tools:targetApi="o"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/editText2"
+            app:layout_constraintHorizontal_bias="0.503"
+            android:hint="@string/enter_password"
+            android:importantForAutofill="no"
+            android:inputType=""
+            tools:targetApi="o"
+            app:layout_constraintTop_toBottomOf="@+id/editText3"
+            android:layout_marginTop="16dp"/>
+    <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="wrap_content"
+            android:padding="@dimen/space_text_with_parent"
+            android:drawableLeft="@drawable/ic_user_login"
+            android:theme="@style/MyEditTextTheme"
+            android:background="@drawable/edt_login_rounded"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_user_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:id="@+id/editText3"
+            app:layout_constraintHorizontal_bias="0.496" android:hint="@string/phone"
+            android:importantForAutofill="no" android:inputType="" tools:targetApi="o"
+            app:layout_constraintTop_toBottomOf="@+id/editText4" android:layout_marginTop="16dp"/>
+    <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="wrap_content"
+            android:padding="@dimen/space_text_with_parent"
+            android:drawableLeft="@drawable/ic_user_login"
+            android:theme="@style/MyEditTextTheme"
+            android:background="@drawable/edt_login_rounded"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_user_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:id="@+id/editText4"
+            app:layout_constraintHorizontal_bias="0.496" android:hint="@string/enter_username"
+            android:importantForAutofill="no" android:inputType="" tools:targetApi="o"
+            android:layout_marginTop="48dp" app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"/>
     <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="wrap_content"
             android:padding="@dimen/space_text_with_parent"
@@ -56,11 +76,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_height="wrap_content"
             android:id="@+id/editText" app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" android:layout_marginTop="12dp"
-            android:hint="@string/enter_password" android:inputType="" android:autofillHints=""
+            app:layout_constraintTop_toBottomOf="@+id/editText2" android:layout_marginTop="16dp"
+            android:hint="@string/enter_re_password" android:inputType="" android:autofillHints=""
             android:importantForAutofill="no" tools:targetApi="o"/>
     <androidx.appcompat.widget.AppCompatButton
-            android:text="@string/login"
+            android:text="@string/Register"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:background="@drawable/btn_login_rounded"
@@ -107,23 +127,6 @@
             android:contentDescription="@string/todo"
             app:layout_constraintEnd_toStartOf="@+id/imageButton3" app:layout_constraintTop_toBottomOf="@+id/button"
             android:layout_marginTop="24dp"/>
-    <TextView
-            android:text="@string/Register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnRegister"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton2"
-            android:layout_marginTop="16dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.192"/>
-    <TextView
-            android:text="@string/forgot_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnForgotPassword"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.622"
-            android:layout_marginTop="16dp"/>
     <androidx.constraintlayout.widget.Barrier
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

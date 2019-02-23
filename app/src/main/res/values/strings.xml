@@ -13,4 +13,7 @@
     <string name="or">or</string>
     <string name="todo">TODO</string>
     <string name="reset">Reset</string>
+    <string name="phone">Enter Phone</string>
+    <string name="enter_re_password">Re-enter Password</string>
+    <string name="forgot_password">Forgot?</string>
 </resources>

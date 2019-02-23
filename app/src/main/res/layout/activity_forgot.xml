@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/login_bg"
-        tools:context=".login.LoginActivity">
+        tools:context=".accounting.login.LoginActivity">
     <androidx.appcompat.widget.AppCompatImageView
             android:src="@drawable/grabteacher_logo"
             android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
             android:background="@drawable/btn_login_rounded"
             android:layout_width="215dp"
             android:layout_height="39dp"
-            android:id="@+id/button"
+            android:id="@+id/btnSumbitForgot"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="32dp"
