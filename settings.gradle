@@ -1,1 +1,1 @@
-include ':app', ':Domain', ':Remote', ':cache',':DataSource'
+include ':app', ':Domain', ':Remote', ':cache',':DataSource', ':firebaseonline'

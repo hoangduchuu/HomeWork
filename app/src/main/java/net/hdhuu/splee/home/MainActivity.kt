@@ -11,6 +11,7 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 import net.hdhuu.domain.model.Post
 import net.hdhuu.splee.home.model.MainViewModel
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity(){
     val mainViewModel: MainViewModel by viewModel()
 
     val mainPostAdapter: MainPostAdapter by inject()
+    val firebaseDatabase = FirebaseDatabase.getInstance();
+    val databaseReference = firebaseDatabase.reference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,8 +64,9 @@ class MainActivity : AppCompatActivity(){
 
     private val projectListener = object : PostClickListener {
         override fun onItemClicked(id: String) {
-            Log.d("CLICKED: " , id)
 
+            mainViewModel.remove(id)
+//            databaseReference.child(id).setValue(mainViewModel.getPost().value,"b");
         }
 
     }

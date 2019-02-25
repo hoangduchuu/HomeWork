@@ -8,8 +8,14 @@ import io.reactivex.observers.DisposableObserver
 import net.hdhuu.domain.model.Post
 import net.hdhuu.domain.usecase.DeleteMessageUseCase
 import net.hdhuu.domain.usecase.GetPostUseCase
+import net.hdhuu.domain.usecase.account.RegisterUseCase
+import net.hdhuu.splee.di.registerModule
 
-class MainViewModel(val getPosts: GetPostUseCase, val  deleteMessageUseCase: DeleteMessageUseCase) : ViewModel() {
+class MainViewModel(
+    val getPosts: GetPostUseCase,
+    val deleteMessageUseCase: DeleteMessageUseCase,
+    val registerUseCase: RegisterUseCase
+) : ViewModel() {
 
     private val liveData: MutableLiveData<PostState> = MutableLiveData()
     private var disposable: Disposable? = null
@@ -25,23 +31,23 @@ class MainViewModel(val getPosts: GetPostUseCase, val  deleteMessageUseCase: Del
 
     fun getPosts() {
         liveData.postValue(PostState.Loading)
-            getPosts.run("", object : DisposableObserver<List<Post>>() {
-                override fun onComplete() {
-                }
+        getPosts.run("", object : DisposableObserver<List<Post>>() {
+            override fun onComplete() {
+            }
 
-                override fun onNext(t: List<Post>) {
-                    liveData.postValue(PostState.Success(t))
-                }
+            override fun onNext(t: List<Post>) {
+                liveData.postValue(PostState.Success(t))
+            }
 
-                override fun onError(it: Throwable) {
-                    liveData.postValue(PostState.Error(it.message))
-                }
+            override fun onError(it: Throwable) {
+                liveData.postValue(PostState.Error(it.message))
+            }
 
-            })
+        })
     }
 
     fun remove(id: String) {
-        deleteMessageUseCase.run(id,object :DisposableObserver<Boolean>(){
+        registerUseCase.run(RegisterUseCase.Params("hoangduchuuvn${id}@gmail.com",id,"abcdef12345"), object : DisposableObserver<Boolean>() {
             override fun onComplete() {
                 liveData.postValue(PostState.Success(liveData.value?.data!!))
             }
@@ -50,7 +56,6 @@ class MainViewModel(val getPosts: GetPostUseCase, val  deleteMessageUseCase: Del
             }
 
             override fun onError(e: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
         })

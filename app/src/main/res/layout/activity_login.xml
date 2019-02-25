@@ -43,7 +43,7 @@
             android:drawableStart="@drawable/ic_user_login"
             app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2"
             android:layout_marginTop="20dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:id="@+id/editText2"
+            app:layout_constraintStart_toStartOf="parent" android:id="@+id/editTextPassword"
             app:layout_constraintHorizontal_bias="0.503" android:hint="@string/enter_username"
             android:importantForAutofill="no" android:inputType="" tools:targetApi="o"/>
     <androidx.appcompat.widget.AppCompatEditText
@@ -56,7 +56,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_height="wrap_content"
             android:id="@+id/editText" app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" android:layout_marginTop="12dp"
             android:hint="@string/enter_password" android:inputType="" android:autofillHints=""
             android:importantForAutofill="no" tools:targetApi="o"/>
     <androidx.appcompat.widget.AppCompatButton
@@ -72,41 +72,42 @@
             app:layout_constraintHorizontal_bias="0.498" android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginRight="32dp"/>
     <ImageView
+            android:layout_marginEnd="13dp"
+            app:layout_constraintHorizontal_chainStyle="packed"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_facebook"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_facebook"
             android:id="@+id/imageButton"
             android:contentDescription="@string/todo"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintBottom_toBottomOf="@+id/imageButton2" app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton2" app:layout_constraintTop_toBottomOf="@+id/button"/>
+            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/btnLogin"/>
     <ImageView
+            android:layout_marginEnd="13dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_google"
             android:id="@+id/imageButton2"
             android:contentDescription="@string/todo"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-            app:layout_constraintTop_toTopOf="@+id/imageButton3"
-            app:layout_constraintBottom_toBottomOf="@+id/imageButton3" app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"/>
+            app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_twitter"
             android:id="@+id/imageButton3"
             android:contentDescription="@string/todo"
-            app:layout_constraintStart_toEndOf="@+id/imageButton4" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintTop_toTopOf="@+id/imageButton4"
-            app:layout_constraintBottom_toBottomOf="@+id/imageButton4" app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintStart_toEndOf="@+id/imageButton4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton"/>
     <ImageView
+            android:layout_marginEnd="13dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_instagram"
             android:id="@+id/imageButton4"
-            app:layout_constraintStart_toEndOf="@+id/imageButton2"
-            app:layout_constraintHorizontal_bias="0.5"
             android:contentDescription="@string/todo"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton3" app:layout_constraintTop_toBottomOf="@+id/button"
-            android:layout_marginTop="24dp"/>
+            app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+            app:layout_constraintStart_toEndOf="@+id/imageButton2"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton"/>
     <TextView
             android:text="@string/Register"
             android:layout_width="wrap_content"

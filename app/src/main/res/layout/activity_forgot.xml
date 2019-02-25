@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_user_login"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:id="@+id/editText2"
+            app:layout_constraintStart_toStartOf="parent" android:id="@+id/editTextPassword"
             app:layout_constraintHorizontal_bias="0.503" android:hint="@string/enter_username"
             android:importantForAutofill="no" android:inputType="" tools:targetApi="o"
             android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2"/>
@@ -58,7 +58,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp" android:layout_marginEnd="32dp" android:layout_marginRight="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" android:layout_marginTop="32dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/editTextPassword" android:layout_marginTop="32dp"/>
     <androidx.constraintlayout.widget.Barrier
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

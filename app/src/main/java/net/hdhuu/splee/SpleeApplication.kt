@@ -2,21 +2,19 @@ package net.hdhuu.splee
 
 import android.app.Application
 import android.util.Log
+import com.google.firebase.FirebaseApp
 import io.reactivex.functions.Consumer
 import io.reactivex.internal.functions.Functions
 import io.reactivex.plugins.RxJavaPlugins
-import net.hdhuu.splee.di.activitiesModule
-import net.hdhuu.splee.di.applicationModule
-import net.hdhuu.splee.di.postModule
+import net.hdhuu.splee.di.*
 import org.koin.android.ext.android.startKoin
-import io.reactivex.internal.functions.Functions.emptyConsumer
-
 
 
 class SpleeApplication: Application(){
     override fun onCreate() {
         super.onCreate()
-        startKoin(this, listOf(applicationModule, activitiesModule, postModule))
+        FirebaseApp.initializeApp(this)
+        startKoin(this, listOf(applicationModule, activitiesModule, postModule,registerModule, firebaseModule))
         RxJavaPlugins.setErrorHandler {
             it->
             run {
